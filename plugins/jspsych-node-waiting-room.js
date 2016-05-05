@@ -24,7 +24,7 @@ jsPsych.plugins['waiting-room'] = (function(){
 
     // subscribe to the server for updates about the game room
     jsPsych.node.socket.on('room-update', function(message){
-
+      var n = message.participants;
     });
 
     jsPsych.node.socket.once('join-reply', function(message){
