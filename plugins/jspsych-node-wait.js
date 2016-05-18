@@ -14,10 +14,10 @@ jsPsych.plugins["wait"] = (function() {
     var start = Date.now();
 
     setTimeout(function(){
-      socket.emit('wait', {});
+      jsPsych.node.socket.emit('wait', {});
     }, 250);
 
-    socket.once('wait-reply', function(){
+    jsPsych.node.socket.once('wait-reply', function(){
       // data saving
       var trial_data = {
         wait_time: Date.now() - start
