@@ -23,6 +23,7 @@ jsPsych.plugins["wait"] = (function() {
         wait_time: Date.now() - start
       };
 
+      // Clear display
       display_element.empty();
 
       // end trial

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="jspsych-node.js"></script>
+    <script src="plugins/jspsych-node-wait.js"></script>
+    <script src="plugins/jspsych-node-waiting-room.js"></script>
+
+  </head>
+
+  <body>
+  </body>
+
+  <script>
+    jsPsych.node.connect("http://localhost:3000");
+    var timeline = [];
+    timeline.push({
+      type: 'waiting-room',
+      experiment: 'demo',
+      participants: 2
+    });
+
+    jsPsych.init({
+      timeline: timeline
+    });
+  </script>
+</html>
